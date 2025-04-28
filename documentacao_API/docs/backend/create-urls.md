@@ -79,7 +79,7 @@ path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ```
 
-**buscar_ nome_professor** -  Esse endpoint permite buscar professores cadastrados, filtrando por nome ou retornando todos os professores, dependendo dos parâmetros da requisição.Para ter acesso a URL basta inserir o caminho ‘buscar/nome/’
+**buscar_nome_professor** -  Esse endpoint permite buscar professores cadastrados, filtrando por nome ou retornando todos os professores, dependendo dos parâmetros da requisição.Para ter acesso a URL basta inserir o caminho ‘buscar/nome/’
 
 ```py title="urls.py"
 path('buscar/nome/', buscar_nome_professor),
