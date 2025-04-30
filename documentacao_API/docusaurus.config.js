@@ -83,11 +83,6 @@ const config = {
             position: 'left',
             label: 'Começar',
           },
-          {
-            to: '/blog', 
-            label: 'Integrantes', 
-            position: 'left'
-          },
         ],
       },
       footer: {

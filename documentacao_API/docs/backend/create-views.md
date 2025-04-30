@@ -52,7 +52,7 @@ def listar_professores(request):
 
 ## Método GET
 
-**URL:** /professores/buscar/'nome'
+**URL:** /professores/buscar/`?=${nome}`
 
 **Método:** 
   - GET: Buscar professor por nome
@@ -72,7 +72,7 @@ def buscar_nome_professor(request):
     serializer = CadastroSerializer(professores, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 ```
-dhfksdh
+
 ```py title="views.py"
 class ProfessoresView(ListCreateAPIView):
     queryset = Cadastro.objects.all()
@@ -82,7 +82,7 @@ class ProfessoresView(ListCreateAPIView):
 
 ## Método GET e PUT
 
-**URL:** /professores/'id'
+**URL:** /professores/`id`
 
 **Métodos:** 
   - GET: Retornar um professor específico na área específica
@@ -107,8 +107,6 @@ class ProfessoresDetailView(RetrieveUpdateDestroyAPIView):
   - GET - Este método é chamado quando uma requisição get é feita. Ele retorna os detalhes do professor específico, utilizando o serializer para formatar a resposta.
   - PUT - Este método é chamado quando uma requisição put é feita. Ele permite atualizar os dados do professor específico. Os dados devem ser enviados no corpo da requisição e serão validados pelo serializer.
   - DELETE - Este método é chamado quando uma requisição delete é feita. Ele exclui o professor específico do banco de dados.
-  - **Parâmetro:**
-    - id - Chave primária do professor
 
 ```py title="views.py"
 class ProfessoresSearchView(ListAPIView):
@@ -136,7 +134,7 @@ class DisciplinasView(ListCreateAPIView):
 
 ## Método GET e POST
 
-**URL:** /disciplina/id
+**URL:** /disciplina/`id`
 
 **Métodos:** 
  - GET - Retorna a lista de todas as disciplinas
@@ -177,7 +175,7 @@ class DisciplinaDetailView(RetrieveUpdateDestroyAPIView):
 
 ## Método GET e POST - Ambiente
 
-**URL:** /ambiente/id
+**URL:** /ambiente/`id`
 
 **Métodos:** 
  - GET: Retorna uma lista de todos os ambientes.
@@ -203,7 +201,7 @@ class AmbientesView(ListCreateAPIView):
 
 ## Método GET e POST - Ambiente
 
-**URL:** /ambiente/id
+**URL:** /ambiente/`id`
 
 **Métodos:** 
  - GET: Retorna os detalhes do ambiente específico.
@@ -256,7 +254,7 @@ class CursosView(ListCreateAPIView):
 
 ## Método GET, POST PATH e DELETE - Curso
 
-**URL:** /curso/id
+**URL:** /curso/`id`
 
 **Métodos:** 
  - GET - Este método é utilizado para recuperar uma instância específica do modelo Curso.  
